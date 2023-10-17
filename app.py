@@ -13,7 +13,9 @@ class App:
                 fields = [
                     DbField(
                         'Jornada',
-                        'int'
+                        'int',
+                        min = 1,
+                        max = 2
                     ),
                     DbField(
                         'Local',

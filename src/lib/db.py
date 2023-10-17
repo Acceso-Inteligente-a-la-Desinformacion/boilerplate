@@ -4,18 +4,20 @@ import random
 from typing import List
 
 class DbField:
-    def __init__(self, name: str, type: str):
+    def __init__(self, name: str, type: str, min: int = 0, max: int = 1000):
         self.name = name.replace(' ', '_').upper()
         self.type = type
+        self.min = min
+        self.max = max
     
     def get(self):
         return f'{self.name.upper()} {self.type.upper()}'
     
     def exampleValue(self):
         if self.type.lower() == 'text':
-            value = self.name.capitalize() + ' ' + str(random.randint(1, 1000))
+            value = self.name.capitalize() + ' ' + str(random.randint(self.min, self.max))
         elif self.type.lower() == 'int':
-            value = random.randint(1, 1000)
+            value = random.randint(self.min, self.max)
 
         return value
     

@@ -81,7 +81,7 @@ class MenuTab:
         self.title = title
         self.items = items
 
-    def addTab(self, tab: type[MenuTabItem]):
+    def addTab(self, tab: type(MenuTabItem)):
         self.items.append(tab)
 
 # Interfaz gráfica de la aplicación
@@ -139,4 +139,3 @@ class GUI:
 
     def formWindow(self, title, components):
         return FormWindow(title, components)
-
