@@ -51,6 +51,12 @@ class FormWindow:
                 entry.bind("<Return>", create_func(c, entry))
                 entry.pack(side=LEFT)
 
+            elif c['type'] == 'text':
+                entry = Entry(self.root, width=c['width'])
+
+                entry.bind("<Return>", create_func(c, entry))
+                entry.pack(side=LEFT)
+
             elif c['type'] == 'entry':
                 entry = Entry(self.root)
                 entry.bind("<Return>", create_func(c, entry))

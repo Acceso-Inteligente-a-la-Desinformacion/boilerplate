@@ -1,5 +1,6 @@
 import sqlite3
 import random
+import datetime
 
 from typing import List
 
@@ -18,6 +19,8 @@ class DbField:
             value = self.name.capitalize() + ' ' + str(random.randint(self.min, self.max))
         elif self.type.lower() == 'int':
             value = random.randint(self.min, self.max)
+        elif self.type.lower() == 'date':
+            value = datetime.datetime.now()
 
         return value
     
